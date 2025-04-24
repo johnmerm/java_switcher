@@ -70,7 +70,7 @@ if shell_type == 'cmd':
     print(f"set PATH={PATH}")
 elif shell_type == 'powershell':
     print(f"$env:JAVA_HOME = '{JAVA_HOME}'")
-    print(f"$env:PATH = '{PATH}'")
+    print(f"$env:PATH='{PATH}'")
 elif shell_type == 'bash':
     # Convert Windows path to Unix format for Git Bash
     print(f"export JAVA_HOME='{JAVA_HOME}'")
