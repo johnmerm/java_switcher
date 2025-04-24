@@ -6,10 +6,11 @@ $SCRIPT_DIR = Split-Path -Parent $MyInvocation.MyCommand.Definition
 Write-Output "SCRIPT_DIR=$SCRIPT_DIR"
 
 if (-not $env:SHELL) {
-    Write-Output "SHELL not set"
+#     Write-Output "SHELL not set"
 
     $output = python "$SCRIPT_DIR\set_java.py" $JavaVersion
     foreach ($line in $output) {
+#         Write-Output "Line: $line"
         Invoke-Expression $line
     }
     Write-Output "Java environment updated to $JavaVersion"

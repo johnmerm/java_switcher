@@ -34,7 +34,7 @@ def detect_shell():
             return 'bash'
     # Check for Windows CMD
     if sys.platform.lower().startswith('win'):
-        if 'powershell.exe' in parent_names:
+        if 'powershell.exe' in parent_names or 'pwsh.exe' in parent_names:
             return 'powershell'
         else:
             return 'cmd'
