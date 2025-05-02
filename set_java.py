@@ -1,9 +1,6 @@
 import os
 import sys
 
-
-
-
 # try:
 #     import pydevd_pycharm
 #     pydevd_pycharm.settrace('localhost', port=5678, stdoutToServer=True, stderrToServer=True)
@@ -36,6 +33,8 @@ def detect_shell():
     if sys.platform.lower().startswith('win'):
         if 'powershell.exe' in parent_names or 'pwsh.exe' in parent_names:
             return 'powershell'
+        elif 'bash.exe' in parent_names:
+            return 'bash'
         else:
             return 'cmd'
     return None
